@@ -25,7 +25,8 @@ urlpatterns = [
 
 #include index
 urlpatterns += [
-		path('', views.index, name='index')
+		path('', views.index, name='index'),
+		path('viewposts', views.viewposts, name='viewposts')
 ]
 
 #static files

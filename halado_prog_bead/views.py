@@ -7,4 +7,8 @@ def index(request):
 			'index.html',
 		)
 
+def viewposts(request):
+	return HttpResponse("this will display allll the posts")
+
+
 from django.views import generic
