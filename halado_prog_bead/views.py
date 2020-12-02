@@ -6,6 +6,5 @@ def index(request):
 			request,
 			'index.html',
 		)
-		# return HttpResponse("hello")
 
 from django.views import generic
