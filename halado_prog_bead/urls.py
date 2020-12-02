@@ -15,12 +15,26 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from endpoints.views import index
+from halado_prog_bead import views
+from django.conf.urls import url, include
 
 
 urlpatterns = [
-    path('index/', index),
+    path('admin/', admin.site.urls),
 ]
+
+#include index
 urlpatterns += [
-	path('endpoints/', include('endpoints.urls'))
+		path('', views.index, name='index')
+]
+
+#static files
+from django.conf import settings
+from django.conf.urls.static import static
+
+urlpatterns+= static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+#login logout
+urlpatterns += [
+    path('accounts/', include('django.contrib.auth.urls')),
 ]
