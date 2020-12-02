@@ -16,6 +16,8 @@ import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+SETTINGS_PATH = os.path.normpath(os.path.dirname(__file__))
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
@@ -120,6 +122,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+STATIC_ROOT = 'static'
+
 TEMPLATE_DIRS = (
-    os.path.join(BASE_DIR, 'halado_prog_bead/templates'),
+    os.path.join(SETTINGS_PATH, 'templates'),
 )
+print(TEMPLATE_DIRS)
