@@ -22,5 +22,5 @@ urlpatterns = [
     path('index/', index),
 ]
 urlpatterns += [
-	path('app/', include('app.urls'))
+	path('endpoints/', include('endpoints.urls'))
 ]
