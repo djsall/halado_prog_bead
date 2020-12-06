@@ -37,5 +37,5 @@ def submitpost(request):
 def signup(request):
 	return render(
 		request,
-		'signup.html'
+		'registration/signup.html'
 	)

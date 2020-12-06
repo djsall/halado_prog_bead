@@ -1,8 +1,8 @@
+from django.conf.urls import include
 from django.contrib import admin
 from django.urls import path
-from halado_prog_bead import views
-from django.conf.urls import url, include
 
+from halado_prog_bead import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -13,7 +13,7 @@ urlpatterns += [
 	path('', views.index, name='index'),
 	path('viewposts', views.viewposts, name='viewposts'),
 	path('submitpost', views.submitpost, name='submitpost'),
-	path('signup', views.signup, name='signup')
+	path('signup', views.signup, name='signup'),
 ]
 
 #static files
