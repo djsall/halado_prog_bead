@@ -1,14 +1,14 @@
 from django.shortcuts import render
 
 # example post data - TODO: Convert to DICT ARRAY so multiple posts can be viewed
-post_data = {
+article_data = {
 	"title": "yeah, here we go",
 	"content": "Fuck you",
 	"created": "2020-06-09"
 }
-posts = {
-	"post_1": post_data,
-	"post_2": post_data
+articles = {
+	"post_1": article_data,
+	"post_2": article_data
 }
 # index view
 def index(request):
@@ -23,7 +23,7 @@ def viewposts(request):
 	return render(
 		request,
 		'view_posts.html',
-		posts
+		articles
 	)
 
 
