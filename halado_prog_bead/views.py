@@ -23,7 +23,7 @@ def viewposts(request):
 	return render(
 		request,
 		'view_posts.html',
-		articles
+		{'myDict': articles}
 	)
 
 

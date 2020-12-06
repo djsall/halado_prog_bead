@@ -1,15 +1,12 @@
 {% extends 'base_generic.html' %} {% block content %}
 <h1>this will display posts</h1>
-  {% if 'articles' %}
-    {% for article in articles %}
+    {% for key, value in myDict.items %}
       <div class="row">
         <div class="col">
-          <h2>{{ article.title }}</h2>
-          <p>{{ article.content }}</p>
-          <p>{{ article.created }}</p>
+          <h2>{{ value.title }}</h2>
+          <p>{{ value.content }}</p>
+          <p>{{ value.created }}</p>
         </div>
       </div>
-    {% endfor %}
-
-  {% endif %}
+    {% endfor%}
 {% endblock content %}
