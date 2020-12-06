@@ -10,8 +10,6 @@ posts = {
 	"post_1": post_data,
 	"post_2": post_data
 }
-
-
 # index view
 def index(request):
 	return render(
