@@ -1,3 +1,17 @@
 {% extends 'base_generic.html' %} {% block content %}
 <h1>this will display posts</h1>
+  {% if 'posts' %}
+    <p>got posts</p>
+    {% for obj in posts %}
+      <p>for loop running</p>
+      <div class="row">
+        <div class="col">
+          <h2>{{ obj.title }}</h2>
+          <p>{{ obj.content }}</p>
+          <p>{{ obj.created }}</p>
+        </div>
+      </div>
+    {% endfor %}
+
+  {% endif %}
 {% endblock content %}

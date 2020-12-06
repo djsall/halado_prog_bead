@@ -1,10 +1,14 @@
 from django.shortcuts import render
 
 # example post data - TODO: Convert to DICT ARRAY so multiple posts can be viewed
-posts_data = {
+post_data = {
 	"title": "yeah, here we go",
 	"content": "Fuck you",
-	"created-at": "2020-06-09"
+	"created": "2020-06-09"
+}
+posts = {
+	"post_1": post_data,
+	"post_2": post_data
 }
 
 
@@ -21,7 +25,7 @@ def viewposts(request):
 	return render(
 		request,
 		'view_posts.html',
-		posts_data
+		posts
 	)
 
 
@@ -31,5 +35,9 @@ def submitpost(request):
 		request,
 		'submit_post.html'
 	)
-
-
+#signup form
+def signup(request):
+	return render(
+		request,
+		'signup.html'
+	)
