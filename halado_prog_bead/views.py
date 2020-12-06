@@ -44,6 +44,7 @@ def submitpost(request):
 
 
 # signup form
+# https://dev.to/coderasha/create-advanced-user-sign-up-view-in-django-step-by-step-k9m
 def signup(request):
 	form = UserCreationForm(request.POST)
 	if form.is_valid():
