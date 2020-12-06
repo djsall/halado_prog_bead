@@ -1,7 +1,6 @@
 {% extends 'base_generic.html' %} {% block content %}
 <h1>this will display posts</h1>
   {% if 'posts' %}
-    <p>got posts</p>
     {% for post in posts %}
       <div class="row">
         <div class="col">
