@@ -1,6 +1,9 @@
 {% extends "base_generic.html" %} {% block content %}
+  {% load app_filters %}
   <div class="row">
-    <div class="offset-4 col-4 text-center">
+    <div class="offset-4 col-4">
+
+      <div class="text-center">
       {% if form.errors %}
         <p>Your username and password didn't match. Please try again.</p>
       {% endif %} {% if next %} {% if user.is_authenticated %}
@@ -11,16 +14,17 @@
     {% else %}
       <p>Please login to see this page.</p>
     {% endif %} {% endif %}
+    </div>
 
       <form method="post" action="{% url 'login' %}">
         {% csrf_token %}
         <div class="form-group">
           {{ form.username.label_tag }}
-          {{ form.username }}
+          {{ form.username|addclass:'form-control'  }}
         </div>
         <div class="form-group">
           {{ form.password.label_tag }}
-          {{ form.password }}
+          {{ form.password|addclass:'form-control' }}
         </div>
         <div class="form-group">
           <input class="btn btn-block btn-primary" type="submit" value="login"/>

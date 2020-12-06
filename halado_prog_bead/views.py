@@ -13,6 +13,7 @@ articles = {
 	"post_2": article_data
 }
 
+
 # index view
 def index(request):
 	return render(
@@ -30,15 +31,15 @@ def viewposts(request):
 	)
 
 
-
-
 # submit post view
 def submitpost(request):
 	return render(
 		request,
 		'submit_post.html'
 	)
-#signup form
+
+
+# signup form
 def signup(request):
 	return render(
 		request,
