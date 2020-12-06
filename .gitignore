@@ -1,1 +1,7 @@
 .idea
+*/__pycache__
+__pycache__
+.pyc
+.vs
+bin
+obj
