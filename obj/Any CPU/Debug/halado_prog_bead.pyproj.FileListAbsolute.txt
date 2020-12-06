@@ -1,3 +1,0 @@
-D:\programming\Source\innobie\halado_prog_bead\obj\Any CPU\Debug\halado_prog_bead.pyproj.CoreCompileInputs.cache
-D:\programming\Source\innobie\halado_prog_bead\bin\Microsoft.PythonTools.WebRole.dll
-D:\programming\Source\innobie\halado_prog_bead\bin\wfastcgi.py
