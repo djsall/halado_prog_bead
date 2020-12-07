@@ -128,4 +128,4 @@ STATIC_URL = '/static/'
 
 STATIC_ROOT = 'static'
 
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/home'

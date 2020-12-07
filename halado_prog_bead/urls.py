@@ -17,7 +17,8 @@ urlpatterns += [
 	path('viewposts', views.viewposts, name='viewposts'),
 	path('submitpost', views.submitpost, name='submitpost'),
 	path('signup', views.signup, name='signup'),
-	path('accounts/', include('django.contrib.auth.urls'))
+	path('accounts/', include('django.contrib.auth.urls')),
+	path('home', views.home, name='home')
 ]
 
 # static files

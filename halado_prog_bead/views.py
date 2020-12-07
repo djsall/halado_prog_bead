@@ -1,11 +1,8 @@
 from django.contrib.auth import login, authenticate
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
+from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect
-from django.http import HttpRequest;
-from django.template import Context
-
-# example post data - TODO: Convert to DICT ARRAY so multiple posts can be viewed
-from .forms import SignUpForm
 
 article_data = {
 	"title": "yeah, here we go",
@@ -36,6 +33,7 @@ def viewposts(request):
 
 
 # submit post view
+@login_required
 def submitpost(request):
 	return render(
 		request,
@@ -43,22 +41,19 @@ def submitpost(request):
 	)
 
 
+def home(request):
+	return HttpResponseRedirect('/')
+
+
 # signup form
 # https://dev.to/coderasha/create-advanced-user-sign-up-view-in-django-step-by-step-k9m
 def signup(request):
 	form = UserCreationForm(request.POST)
 	if form.is_valid():
-		user = form.save()
-		user.refresh_from_db()
-		user.profile.first_name = form.cleaned_data.get('first_name')
-		user.profile.last_name = form.cleaned_data.get('last_name')
-		user.profile.email = form.cleaned_data.get('email')
-		user.save()
+		form.save()
 		username = form.cleaned_data.get('username')
 		password = form.cleaned_data.get('password1')
 		user = authenticate(username=username, password=password)
 		login(request, user)
 		return redirect('index')
-	else:
-		form = SignUpForm()
 	return render(request, 'registration/signup.html', {'form': form})
