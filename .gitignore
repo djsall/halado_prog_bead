@@ -4,4 +4,4 @@ __pycache__/
 .vs
 bin
 obj
-*.sqlite3
+db.sqlite3
