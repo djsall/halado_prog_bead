@@ -29,13 +29,8 @@
 						<li class="nav-item">
 							<a class="nav-link" href="{% url 'viewposts'%}">View Posts</a>
 						</li>
-						<li class="nav-item"><a href="{% url 'submitpost'%}" class="nav-link">Submit Post</a></li>
 						{% if user.is_authenticated %}
-						<li class="nav-item">
-							<a class="nav-link" href="{% url 'createpost' %}"
-								>Create Post as {{ user.get_username}}</a
-							>
-						</li>
+						<li class="nav-item"><a href="{% url 'submitpost'%}" class="nav-link">Submit Post as {{ user.get_username}}</a></li>
 						<li>
 							<a class="nav-link" href="{% url 'logout' %}?next={{request.path}}">Logout</a>
 						</li>
