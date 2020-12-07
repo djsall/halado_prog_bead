@@ -41,7 +41,6 @@ def submitpost(request):
 		'submit_post.html'
 	)
 
-
 # redirect view for login
 def home(request):
 	return HttpResponseRedirect('/')

@@ -24,7 +24,7 @@ urlpatterns += [
 	#login
 	path('accounts/', include('django.contrib.auth.urls')),
 	#home redirect for login
-	path('home', views.home, name='home')
+	path('home', views.home, name='home'),
 ]
 
 # static files
