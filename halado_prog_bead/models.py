@@ -4,5 +4,6 @@ from django.db import models
 
 class Post(models.Model):
     Text = models.CharField(max_length=16384)
+    Title = models.CharField(max_length=100)
     Author = models.OneToOneField(User, on_delete=models.DO_NOTHING)
     Time = models.DateTimeField()
