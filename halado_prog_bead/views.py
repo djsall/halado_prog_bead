@@ -7,7 +7,8 @@ from django.shortcuts import render, redirect
 article_data = {
 	"title": "yeah, here we go",
 	"content": "Fuck you",
-	"created": "2020-06-09"
+	"created_at": "2020-06-09",
+	"created_by": "gergo"
 }
 articles = {
 	"post_1": article_data,

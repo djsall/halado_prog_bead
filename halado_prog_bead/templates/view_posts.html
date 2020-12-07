@@ -1,12 +1,16 @@
 {% extends 'base_generic.html' %} {% block content %}
-<h1>this will display posts</h1>
-    {% for key, value in myDict.items %}
-      <div class="row">
-        <div class="col">
-          <h2>{{ value.title }}</h2>
-          <p>{{ value.content }}</p>
-          <p>{{ value.created }}</p>
-        </div>
+  <div class="row">
+    <div class="col-8 offset-2 mb-5 mt-5">
+      <h1>Posts by other users</h1>
+    </div>
+  </div>
+  {% for key, value in myDict.items %}
+    <div class="row mb-5">
+      <div class="col-8 offset-2 border">
+        <h2 class="mt-4 text-center">{{ value.title }}</h2>
+        <h5 class="mr-5 ml-5 mt-4 mb-3">{{ value.content }}</h5>
+        <h6 class="ml-2 mb-3"><small class="small">Created at {{ value.created_at }} by {{ value.created_by }}</small></h6>
       </div>
-    {% endfor%}
+    </div>
+  {% endfor %}
 {% endblock content %}
