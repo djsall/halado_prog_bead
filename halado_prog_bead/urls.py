@@ -13,11 +13,17 @@ urlpatterns = [
 
 # include index
 urlpatterns += [
+	#index
 	path('', views.index, name='index'),
+	#posts
 	path('viewposts', views.viewposts, name='viewposts'),
+	#submit post
 	path('submitpost', views.submitpost, name='submitpost'),
+	#signup
 	path('signup', views.signup, name='signup'),
+	#login
 	path('accounts/', include('django.contrib.auth.urls')),
+	#home redirect for login
 	path('home', views.home, name='home')
 ]
 

@@ -42,12 +42,12 @@ def submitpost(request):
 	)
 
 
+# redirect view for login
 def home(request):
 	return HttpResponseRedirect('/')
 
 
 # signup form
-# https://dev.to/coderasha/create-advanced-user-sign-up-view-in-django-step-by-step-k9m
 def signup(request):
 	form = UserCreationForm(request.POST)
 	if form.is_valid():
