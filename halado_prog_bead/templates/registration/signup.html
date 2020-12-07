@@ -3,6 +3,7 @@
 {% block content %}
   {% if user.is_authenticated %}
     <span class="text-danger text-center">You are already logged in as {{ user.get_username }}</span>
+    <p><a href="/">Back to Home</a></p>
 
     {% else %}
       <div class="row">
