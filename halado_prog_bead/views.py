@@ -3,18 +3,9 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect
-
-article_data = {
-	"title": "yeah, here we go",
-	"content": "Fuck you",
-	"created_at": "2020-06-09",
-	"created_by": "gergo"
-}
-articles = {
-	"post_1": article_data,
-	"post_2": article_data
-}
-
+from django.db import models
+from halado_prog_bead.models import Post
+from datetime import datetime
 
 # index view
 def index(request):
@@ -29,16 +20,29 @@ def viewposts(request):
 	return render(
 		request,
 		'view_posts.html',
-		{'myDict': articles}
+		{'posts': Post.objects.all()}
 	)
 
 
 # submit post view
 @login_required
 def submitpost(request):
-	return render(
+	if request.method == 'GET':
+		return render(
+			request,
+			'submit_post.html'
+		)
+	elif request.method == 'POST':
+		Post.objects.create(
+			Text=request.POST['post_body'],
+			Author=request.user,
+			Title=request.POST['post_title'],
+			Time=datetime.now()
+			).save();
+		return render(
 		request,
-		'submit_post.html'
+		'view_posts.html',
+		{'posts': Post.objects.all()}
 	)
 
 # redirect view for login
